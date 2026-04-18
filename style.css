@@ -198,4 +198,10 @@ section.container::before {
         height: 35px !important; /* Ukuran di HP */
     }
 }
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    align-items: center;
+}
 
