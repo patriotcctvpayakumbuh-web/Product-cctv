@@ -198,7 +198,7 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     .grid{gap:25px;padding:0 10px}
 }
 
-/* --- GALERI RAPI & MODAL POP-UP (BARU) --- */
+/* --- GALERI RAPI & MODAL POP-UP (TERBARU) --- */
 .gallery-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -216,7 +216,7 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     transform: translateY(-5px);
 }
 
-/* Container Gambar agar frame foto masuk semua secara utuh & tidak terpotong */
+/* Container Gambar Galeri agar tampil utuh tanpa terpotong */
 .img-container {
     width: 100%;
     height: 240px;
@@ -230,7 +230,7 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
 .img-container img { 
     width: 100%; 
     height: 100%; 
-    object-fit: contain; /* Foto tampil utuh tanpa terpotong */
+    object-fit: contain; 
     transition: transform 0.4s ease; 
 }
 .gallery-item:hover .img-container img {
@@ -254,48 +254,64 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     margin: 0;
 }
 
-/* --- STYLING MODAL POP-UP (LIGHTBOX) --- */
+/* --- STYLING MODAL POP-UP (PAS & UTUH DI HP/PC) --- */
 .modal {
     display: none; 
     position: fixed;
     z-index: 9999;
-    padding-top: 50px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
+
 .modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
+    max-width: 90vw;
     max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Gambar tampil utuh proporsional tanpa terpotong */
     border-radius: 8px;
-    object-fit: contain;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+    display: block;
+    margin: auto;
 }
+
 #caption {
-    margin: 15px;
+    margin-top: 15px;
     text-align: center;
-    color: #ccc;
-    font-size: 16px;
+    color: #fff;
+    font-size: 15px;
     font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
+
 .close-modal {
     position: absolute;
     top: 20px;
-    right: 30px;
-    color: #f1f1f1;
-    font-size: 40px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
     font-weight: bold;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: 0.3s;
+    z-index: 10000;
 }
-.close-modal:hover,
-.close-modal:focus {
-    color: var(--primary);
-    text-decoration: none;
+
+.close-modal:hover {
+    background: var(--primary);
+    color: #000;
 }
