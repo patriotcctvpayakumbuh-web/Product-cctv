@@ -18,26 +18,39 @@
     </header>
 
     <section class="container" style="margin-top: 100px;">
-        <div class="section-title reveal"><h2>Portofolio Pengerjaan Rapi</h2><div class="line"></div></div>
+        <div class="section-title reveal">
+            <h2>Portofolio Pengerjaan Rapi</h2>
+            <div class="line"></div>
+        </div>
+        
         <div class="gallery-grid">
+            <!-- Proyek 1 -->
             <div class="gallery-item reveal">
-                <img src="Images/Proyek1.jpg" alt="Pemasangan CCTV Politani Payakumbuh"> 
+                <div class="img-container" onclick="openModal('Images/Proyek1.jpg', 'Kampus Politani Negeri Payakumbuh')">
+                    <img src="Images/Proyek1.jpg" alt="Pemasangan CCTV Politani Payakumbuh"> 
+                </div>
                 <div class="gallery-overlay">
                     <h3>Kampus Politani Negeri Payakumbuh</h3> 
                     <p>Instalasi Gedung Baru 5 Lantai</p>
                 </div>
             </div>
             
+            <!-- Proyek 2 -->
             <div class="gallery-item reveal">
-                <img src="Images/Proyek2.jpg" alt="Pemasangan CCTV MBG Situjuah Limo Nagari"> 
+                <div class="img-container" onclick="openModal('Images/Proyek2.jpg', 'MBG Simona Situjuah')">
+                    <img src="Images/Proyek2.jpg" alt="Pemasangan CCTV MBG Situjuah Limo Nagari"> 
+                </div>
                 <div class="gallery-overlay">
                     <h3>MBG Simona Situjuah</h3> 
                     <p>Instalasi CCTV Gedung MBG</p>
                 </div>
             </div>
 
+            <!-- Proyek 3 -->
             <div class="gallery-item reveal">
-                <img src="Images/Proyek3.jpg" alt="Pemasangan CCTV ONE Farm Lampasi"> 
+                <div class="img-container" onclick="openModal('Images/Proyek3.jpg', 'ONE Farm Lampasi')">
+                    <img src="Images/Proyek3.jpg" alt="Pemasangan CCTV ONE Farm Lampasi"> 
+                </div>
                 <div class="gallery-overlay">
                     <h3>ONE Farm Lampasi</h3> 
                     <p>Instalasi dan Pergantian 12 Kamera IP</p>
@@ -46,10 +59,34 @@
         </div>
     </section>
 
-    <div class="center-btn reveal" style="margin-top: 50px;margin-bottom:50px;text-align:center;">
+    <div class="center-btn reveal" style="margin-top: 50px; margin-bottom: 50px; text-align: center;">
         <a href="https://wa.me/6281267525093" class="btn-wa-large">Klik Untuk Konsultasi Pemasangan</a>
     </div>
+
+    <!-- Struktur Modal Pop-Up (Lightbox) -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
     
+    <script>
+        // Fungsi untuk membuka modal pop-up
+        function openModal(imgSrc, captionText) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const caption = document.getElementById("caption");
+            
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
+            caption.innerHTML = captionText;
+        }
+
+        // Fungsi untuk menutup modal pop-up
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
