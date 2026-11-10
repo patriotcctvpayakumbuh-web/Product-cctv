@@ -198,7 +198,7 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     .grid{gap:25px;padding:0 10px}
 }
 
-/* --- GALERI RAPI & MODAL POP-UP (TERBARU) --- */
+/* --- GALERI RAPI & MODAL POP-UP (VIDEO CALL STYLE) --- */
 .gallery-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -216,7 +216,6 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     transform: translateY(-5px);
 }
 
-/* Container Gambar Galeri agar tampil utuh tanpa terpotong */
 .img-container {
     width: 100%;
     height: 240px;
@@ -254,17 +253,17 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     margin: 0;
 }
 
-/* --- STYLING MODAL POP-UP (PAS & UTUH DI HP/PC) --- */
+/* --- STYLING MODAL MENGAMBANG DI TENGAH (GAYA VIDEO CALL) --- */
 .modal {
     display: none; 
-    position: fixed;
-    z-index: 9999;
+    position: fixed !important;
+    z-index: 99999 !important;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -272,22 +271,27 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
 }
 
 .modal-content {
-    max-width: 90vw;
-    max-height: 80vh;
-    width: auto;
-    height: auto;
-    object-fit: contain; /* Gambar tampil utuh proporsional tanpa terpotong */
-    border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+    max-width: 85% !important;
+    max-height: 80vh !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    background: #fff;
+    padding: 5px;
     display: block;
     margin: auto;
 }
 
 #caption {
-    margin-top: 15px;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
     text-align: center;
     color: #fff;
-    font-size: 15px;
+    font-size: 14px;
     font-family: 'Poppins', sans-serif;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
@@ -297,18 +301,18 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     top: 20px;
     right: 25px;
     color: #fff;
-    font-size: 35px;
+    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.5);
-    width: 40px;
-    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-    z-index: 10000;
+    z-index: 100000;
 }
 
 .close-modal:hover {
