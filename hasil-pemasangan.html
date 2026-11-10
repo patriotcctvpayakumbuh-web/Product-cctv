@@ -56,8 +56,6 @@
                     <p>Instalasi dan Pergantian 12 Kamera IP</p>
                 </div>
             </div>
-
-            <!-- Jika nanti ada Proyek 4, 5, dst., tinggal copy-paste blok di atas ke sini, otomatis rapi -->
         </div>
     </section>
 
@@ -65,7 +63,7 @@
         <a href="https://wa.me/6281267525093" class="btn-wa-large">Klik Untuk Konsultasi Pemasangan</a>
     </div>
 
-    <!-- Struktur Modal Pop-Up (Lightbox) -->
+    <!-- Struktur Modal Pop-Up Mengambang -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="modalImg" onclick="event.stopPropagation()">
@@ -73,7 +71,6 @@
     </div>
     
     <script>
-        // Fungsi untuk membuka modal pop-up
         function openModal(imgSrc, captionText) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImg");
@@ -84,7 +81,6 @@
             caption.innerHTML = captionText;
         }
 
-        // Fungsi untuk menutup modal pop-up
         function closeModal() {
             document.getElementById("imageModal").style.display = "none";
         }
