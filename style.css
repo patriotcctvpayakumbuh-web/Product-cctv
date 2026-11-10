@@ -198,7 +198,7 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     .grid{gap:25px;padding:0 10px}
 }
 
-/* --- GALERI RAPI & MODAL POP-UP (VIDEO CALL STYLE) --- */
+/* --- GALERI RAPI --- */
 .gallery-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -253,9 +253,9 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
     margin: 0;
 }
 
-/* --- STYLING MODAL MENGAMBANG DI TENGAH (GAYA VIDEO CALL) --- */
+/* --- STYLING MODAL MENGAMBANG DI TENGAH (ALA VIDEO CALL) --- */
 .modal {
-    display: none !important; /* WAJIB: Tersembunyi sempurna saat halaman dimuat */
+    display: none; /* Awalnya tersembunyi total */
     position: fixed !important;
     z-index: 99999 !important;
     left: 0;
