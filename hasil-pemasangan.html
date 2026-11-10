@@ -64,7 +64,7 @@
         <a href="https://wa.me/6281267525093" class="btn-wa-large">Klik Untuk Konsultasi Pemasangan</a>
     </div>
 
-    <!-- Struktur Modal Pop-Up Mengambang di Tengah -->
+    <!-- Struktur Modal Pop-Up Mengambang -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="modalImg" onclick="event.stopPropagation()">
@@ -72,18 +72,18 @@
     </div>
     
     <script>
-        // Fungsi pop-up HANYA dipanggil saat gambar galeri diklik
+        // Membuka modal dengan display: flex agar posisinya otomatis pas di tengah layar (ala VC)
         function openModal(imgSrc, captionText) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImg");
             const caption = document.getElementById("caption");
             
-            modal.style.display = "flex";
+            modal.style.setProperty("display", "flex", "important");
             modalImg.src = imgSrc;
             caption.innerHTML = captionText;
         }
 
-        // Fungsi untuk menutup pop-up
+        // Menutup modal
         function closeModal() {
             document.getElementById("imageModal").style.display = "none";
         }
