@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navbar Atas (Murni Link Navigasi, Tidak Ada Pop-up) -->
     <header class="navbar scrolled">
         <div class="logo">PATRIOT<span>CCTV</span></div>
         <nav>
@@ -24,7 +25,7 @@
         </div>
         
         <div class="gallery-grid">
-            <!-- Proyek 1 -->
+            <!-- Proyek 1 (Hanya gambar ini yang kalau diklik memicu pop-up) -->
             <div class="gallery-item reveal">
                 <div class="img-container" onclick="openModal('Images/Proyek1.jpg', 'Kampus Politani Negeri Payakumbuh')">
                     <img src="Images/Proyek1.jpg" alt="Pemasangan CCTV Politani Payakumbuh"> 
@@ -71,6 +72,7 @@
     </div>
     
     <script>
+        // Fungsi ini HANYA berjalan jika gambar galeri diklik
         function openModal(imgSrc, captionText) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImg");
@@ -81,6 +83,7 @@
             caption.innerHTML = captionText;
         }
 
+        // Fungsi untuk menutup modal
         function closeModal() {
             document.getElementById("imageModal").style.display = "none";
         }
