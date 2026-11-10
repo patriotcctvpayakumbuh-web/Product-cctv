@@ -56,6 +56,8 @@
                     <p>Instalasi dan Pergantian 12 Kamera IP</p>
                 </div>
             </div>
+
+            <!-- Jika nanti ada Proyek 4, 5, dst., tinggal copy-paste blok di atas ke sini, otomatis rapi -->
         </div>
     </section>
 
@@ -66,8 +68,8 @@
     <!-- Struktur Modal Pop-Up (Lightbox) -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImg">
-        <div id="caption"></div>
+        <img class="modal-content" id="modalImg" onclick="event.stopPropagation()">
+        <div id="caption" onclick="event.stopPropagation()"></div>
     </div>
     
     <script>
