@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar Atas (Murni Link Navigasi, Tidak Ada Pop-up) -->
+    <!-- Navbar Atas -->
     <header class="navbar scrolled">
         <div class="logo">PATRIOT<span>CCTV</span></div>
         <nav>
@@ -25,7 +25,7 @@
         </div>
         
         <div class="gallery-grid">
-            <!-- Proyek 1 (Hanya gambar ini yang kalau diklik memicu pop-up) -->
+            <!-- Proyek 1 -->
             <div class="gallery-item reveal">
                 <div class="img-container" onclick="openModal('Images/Proyek1.jpg', 'Kampus Politani Negeri Payakumbuh')">
                     <img src="Images/Proyek1.jpg" alt="Pemasangan CCTV Politani Payakumbuh"> 
@@ -64,7 +64,7 @@
         <a href="https://wa.me/6281267525093" class="btn-wa-large">Klik Untuk Konsultasi Pemasangan</a>
     </div>
 
-    <!-- Struktur Modal Pop-Up Mengambang -->
+    <!-- Struktur Modal Pop-Up Mengambang di Tengah -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="modalImg" onclick="event.stopPropagation()">
@@ -72,7 +72,7 @@
     </div>
     
     <script>
-        // Fungsi ini HANYA berjalan jika gambar galeri diklik
+        // Fungsi pop-up HANYA dipanggil saat gambar galeri diklik
         function openModal(imgSrc, captionText) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImg");
@@ -83,7 +83,7 @@
             caption.innerHTML = captionText;
         }
 
-        // Fungsi untuk menutup modal
+        // Fungsi untuk menutup pop-up
         function closeModal() {
             document.getElementById("imageModal").style.display = "none";
         }
