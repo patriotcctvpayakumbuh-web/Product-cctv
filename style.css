@@ -3,7 +3,7 @@
 
 body { 
     font-family: 'Poppins', sans-serif; 
-    line-height: 1.8; /* JARAK ANTAR BARIS LEGA */
+    line-height: 1.8; 
     background: #fff; color: #333; overflow-x: hidden; 
 }
 
@@ -31,9 +31,9 @@ nav a { color: #fff; text-decoration: none; margin-left: 10px; font-weight: 600;
     color: #fff;
 }
 .hero h1 {
-    font-size: 2.5rem; /* Gue gedein dikit biar tegas */
-    color: #ffce00;    /* Pake warna kuning brand lo biar kontras sama foto */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Bayangan item biar kebaca */
+    font-size: 2.5rem;
+    color: #ffce00;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
     line-height: 1.2;
     margin-bottom: 15px;
     font-weight: 800;
@@ -42,14 +42,29 @@ nav a { color: #fff; text-decoration: none; margin-left: 10px; font-weight: 600;
 .hero p {
     font-size: 1.1rem;
     color: #ffffff;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Bayangan biar gak kalah sama foto */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
     margin-bottom: 30px;
     font-weight: 400;
 }
 
-
 /* LAYOUT UMUM */
-.container { padding: 80px 8%; }
+.container { 
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 30px 30px;
+    border-radius: 40px 40px 0 0;
+    margin-top: 80px;
+    position: relative;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(248,249,250,0) 0%, rgba(248,249,250,1) 100%);
+    pointer-events: none;
+}
+
 .bg-light { background: var(--light); }
 .section-title { text-align: center; margin-bottom: 40px; }
 .line { width: 50px; height: 5px; background: var(--primary); margin: 10px auto; border-radius: 10px; }
@@ -85,11 +100,6 @@ nav a { color: #fff; text-decoration: none; margin-left: 10px; font-weight: 600;
 .floating-wa { position: fixed; bottom: 25px; right: 25px; background: var(--success); color: #fff; padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; text-decoration: none; z-index: 2000; font-weight: 700; font-size: 0.8rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 .floating-wa img { width: 20px; margin-left: 8px; }
 
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-.gallery-item { position: relative; height: 250px; border-radius: 15px; overflow: hidden; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-.gallery-overlay { position: absolute; bottom: 0; background: rgba(0,0,0,0.7); color: #fff; width: 100%; padding: 15px; text-align: center; }
-
 .map-wrapper { height: 350px; border-radius: 15px; overflow: hidden; }
 .map-wrapper iframe { width: 100%; height: 100%; border: none; }
 footer { background: var(--dark); color: #666; padding: 40px; text-align: center; font-size: 0.8rem; }
@@ -98,106 +108,49 @@ footer { background: var(--dark); color: #666; padding: 40px; text-align: center
 .reveal.active { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 768px) {
-    .container { padding: 60px 5%; }
+    .container { padding: 40px 5%; }
     .hero h1 { font-size: 1.6rem; }
     .btn-outline-white { display: block; margin: 15px 0 0 0; }
 }
-/* Styling Logo Klien */
-.logo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    align-items: center;
-    justify-items: center;
-}
-.logo-item { text-align: center; }
-.logo-item img {
-    max-width: 110px;
-    height: auto;
-    filter: none;
-    opacity: 1;
-    transition: 0.3s;
-    margin-bottom: 10px;
-}
-.logo-item:hover img { filter: grayscale(0%); opacity: 1; }
-.logo-item span { display: block; font-size: 0.8rem; font-weight: 600; color: #666; }
 
-@media (max-width: 768px) {
-    .logo-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-}
-.dropdown{display:inline-block;position:relative}.dropdown-content{display:none;position:absolute;background-color:#121212;min-width:150px;box-shadow:0 8px 16px rgba(0,0,0,.5);z-index:1001;border-radius:8px;border:1px solid #333;padding:10px 0}.dropdown-content a{color:#fff!important;padding:10px 20px;display:block;margin:0!important;font-size:.8rem;border-bottom:1px solid #222}.dropdown-content a:hover{background-color:var(--primary);color:#000!important}.dropdown:hover .dropdown-content{display:block}.brand-card{text-decoration:none;color:inherit;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.05);border:1px solid #eee;transition:.4s;display:block}.brand-card:hover{transform:translateY(-10px);box-shadow:0 15px 40px rgba(0,0,0,.1)}.brand-img{width:100%;height:200px;overflow:hidden}.brand-img img{width:100%;height:100%;object-fit:cover;transition:.5s}.brand-info{padding:25px}.brand-info h3{font-size:1.4rem;margin-bottom:10px;font-weight:700}.btn-sm{color:var(--primary);font-weight:700;font-size:.9rem}.spec-list{list-style:none;padding:0;margin:25px 0;text-align:left}.spec-list li{padding:10px 0;border-bottom:1px solid #f1f1f1;font-size:.9rem;color:#555;line-height:1.5}.product-info .btn-wa{background-color:var(--success);color:#fff;text-decoration:none;padding:15px;display:block;border-radius:12px;font-weight:700;margin-top:20px;text-align:center}@media (max-width:768px){.dropdown-content{position:static;background-color:#1a1a1a;box-shadow:none;border:none;padding-left:20px}.grid{gap:25px;padding:0 10px}}
-/* Background Seksi Produk biar lebih mewah */
-section.container {
-    background: #f4f7f6; /* Warna abu-abu kebiruan sangat soft */
-    border-radius: 50px 50px 0 0; /* Sudut atas melengkung biar estetik */
-    margin-top: 80px;
-    padding: 60px 20px;
-    box-shadow: inset 0 10px 20px rgba(0,0,0,0.02); /* Efek kedalaman halus */
-}
+/* DROPDOWN & BRAND CARD */
+.dropdown{display:inline-block;position:relative}
+.dropdown-content{display:none;position:absolute;background-color:#121212;min-width:150px;box-shadow:0 8px 16px rgba(0,0,0,.5);z-index:1001;border-radius:8px;border:1px solid #333;padding:10px 0}
+.dropdown-content a{color:#fff!important;padding:10px 20px;display:block;margin:0!important;font-size:.8rem;border-bottom:1px solid #222}
+.dropdown-content a:hover{background-color:var(--primary);color:#000!important}
+.dropdown:hover .dropdown-content{display:block}
 
-/* Bikin kartu mereknya makin menonjol */
-.brand-card {
-    background: #ffffff;
-    border: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-/* Background dengan Corak Digital Dots */
-section.container {
-    background-color: #f8f9fa;
-    /* Ini kode untuk corak titik-titik digital */
-    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
-    background-size: 30px 30px; /* Jarak antar corak */
-    
-    border-radius: 40px 40px 0 0;
-    margin-top: 80px;
-    padding: 60px 20px;
-    position: relative;
-}
+.brand-card{text-decoration:none;color:inherit;background:#ffffff;border-radius:20px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,0.1)!important;border:1px solid rgba(0,0,0,0.05);transition:.4s;display:block;z-index:1}
+.brand-card:hover{transform:translateY(-10px);box-shadow:0 15px 40px rgba(0,0,0,.1)}
+.brand-img{width:100%;height:200px;overflow:hidden}
+.brand-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.brand-info{padding:25px}
+.brand-info h3{font-size:1.4rem;margin-bottom:10px;font-weight:700}
+.btn-sm{color:var(--primary);font-weight:700;font-size:.9rem}
 
-/* Efek gradasi halus di atas corak biar makin pro */
-section.container::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to bottom, rgba(248,249,250,0) 0%, rgba(248,249,250,1) 100%);
-    pointer-events: none;
-}
-
-/* Bikin kartu merek makin stand out di atas corak */
-.brand-card {
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
-    z-index: 1; /* Biar di atas corak */
-}
-/* Styling Bagian Logo Klien biar Rapi */
+/* CLIENT LOGOS */
 .client-logos {
     display: flex;
-    justify-content: center; /* Rata tengah */
-    align-items: center; /* Rata tengah vertikal */
-    flex-wrap: wrap; /* Kalau gak muat, turun ke bawah */
-    gap: 40px; /* Jarak antar logo */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
     padding: 20px 0;
 }
-/* PAKSA WARNA ASLI DARI AWAL (TANPA EFEK) */
 .client-logos img, 
 .client-item img {
     filter: none !important;
     -webkit-filter: grayscale(0) !important;
     opacity: 1 !important;
-    height: 50px; /* Ukuran di laptop */
+    height: 50px;
     width: auto;
-    transform: none !important; /* Biar gak gerak-gerak lagi */
-    transition: none !important; /* Hapus transisi biar gak delay warnanya */
+    transform: none !important;
+    transition: none !important;
+}
+@media (max-width: 768px) {
+    .client-logos img { height: 35px !important; }
 }
 
-/* Penyesuaian HP */
-@media (max-width: 768px) {
-    .client-logos img {
-        height: 35px !important; /* Ukuran di HP */
-    }
-}
 .logo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -205,7 +158,6 @@ section.container::before {
     align-items: center;
 }
 
-/* --- BAGIAN KLIEN OTOMATIS BY PATRIOT CCTV --- */
 .client-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -215,9 +167,8 @@ section.container::before {
     margin-top: 40px;
     padding: 0 10px;
 }
-
 .logo-item {
-    flex: 0 1 calc(50% - 20px); /* Di HP otomatis 2 kolom */
+    flex: 0 1 calc(50% - 20px);
     max-width: 180px; 
     background: #fff;
     padding: 15px;
@@ -226,24 +177,125 @@ section.container::before {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
 }
-
 .logo-item img {
     width: 100%;
     height: 80px; 
-    object-fit: contain; /* Biar logo gak penyok/gepeng */
+    object-fit: contain;
     margin-bottom: 8px;
 }
-
 .logo-item p {
     font-size: 13px;
     font-weight: bold;
     color: #333;
     margin: 0;
 }
-
-/* Tampilan buat Laptop / Layar Lebar */
 @media (min-width: 768px) {
-    .logo-item {
-        flex: 0 1 calc(20% - 20px); /* Di Laptop otomatis 5 kolom sejajar */
-    }
+    .logo-item { flex: 0 1 calc(20% - 20px); }
+}
+
+@media (max-width:768px){
+    .dropdown-content{position:static;background-color:#1a1a1a;box-shadow:none;border:none;padding-left:20px}
+    .grid{gap:25px;padding:0 10px}
+}
+
+/* --- GALERI RAPI & MODAL POP-UP (BARU) --- */
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
+    padding: 20px 0;
+}
+.gallery-item { 
+    background: #fff;
+    border-radius: 15px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Container Gambar agar frame foto masuk semua secara utuh & tidak terpotong */
+.img-container {
+    width: 100%;
+    height: 240px;
+    background-color: #f4f5f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+.img-container img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; /* Foto tampil utuh tanpa terpotong */
+    transition: transform 0.4s ease; 
+}
+.gallery-item:hover .img-container img {
+    transform: scale(1.03);
+}
+
+.gallery-overlay { 
+    padding: 15px;
+    background: #fff;
+    text-align: center;
+}
+.gallery-overlay h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+.gallery-overlay p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* --- STYLING MODAL POP-UP (LIGHTBOX) --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    object-fit: contain;
+}
+#caption {
+    margin: 15px;
+    text-align: center;
+    color: #ccc;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--primary);
+    text-decoration: none;
 }
